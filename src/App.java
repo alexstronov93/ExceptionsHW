@@ -9,10 +9,8 @@ public class App {
             System.out.println("Put initial and step");
             int initial = scanner.nextInt();
             int step = scanner.nextInt();
-            if (step == 0) {
-                throw new ProgressionConfigurationException("Step is ZERO!!!");
-            }
-            prog = new ArithmeticProgression(step, initial);
+
+            prog = new ArithmeticProgression(initial, step);
         } catch (ProgressionConfigurationException e) {
             System.err.println("IT`S EXCEPTION!!!");
             e.printStackTrace();
@@ -20,7 +18,6 @@ public class App {
         try {
             System.out.println("Put number of progression");
             n = scanner.nextInt();
-            if (n==-0) throw new ProgressionConfigurationException("element is ZERO!!!");
             prog.calculate(n);
         } catch (ProgressionConfigurationException e){
             System.err.println("IT`S EXCEPTION!!!");
